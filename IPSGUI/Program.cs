@@ -16,7 +16,7 @@ namespace IPSGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLiquidacion());
+            Application.Run(new FrmMenuPrincipal());
         }
     }
 }

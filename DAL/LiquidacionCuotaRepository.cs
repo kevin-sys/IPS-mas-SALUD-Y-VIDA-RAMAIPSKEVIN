@@ -50,13 +50,15 @@ namespace DAL
                 liquidacionCuotaModeradora.NumeroLiquidacion = datos[0];
                 liquidacionCuotaModeradora.FechaLiquidacion = DateTime.Parse(datos[1]);
                 liquidacionCuotaModeradora.Identificacion = datos[2];
-                liquidacionCuotaModeradora.TipoAfiliacion = datos[3];
-                liquidacionCuotaModeradora.SalarioDevengado = double.Parse(datos[4]);
-                liquidacionCuotaModeradora.ValorServicioHospitalizacion = double.Parse(datos[5]);
-                liquidacionCuotaModeradora.CuotaModeradoraFinal = double.Parse(datos[6]);
-                liquidacionCuotaModeradora.CuotaModeradoraReal = double.Parse(datos[7]);
-                liquidacionCuotaModeradora.Tarifa = double.Parse(datos[8]);
-                liquidacionCuotaModeradora.AplicaTope = datos[9];
+                liquidacionCuotaModeradora.PrimerNombre = datos[3];
+                liquidacionCuotaModeradora.PrimerApellido = datos[4];
+                liquidacionCuotaModeradora.TipoAfiliacion = datos[5];
+                liquidacionCuotaModeradora.SalarioDevengado = double.Parse(datos[6]);
+                liquidacionCuotaModeradora.ValorServicioHospitalizacion = double.Parse(datos[7]);
+                liquidacionCuotaModeradora.CuotaModeradoraFinal = double.Parse(datos[8]);
+                liquidacionCuotaModeradora.CuotaModeradoraReal = double.Parse(datos[9]);
+                liquidacionCuotaModeradora.Tarifa = double.Parse(datos[10]);
+                liquidacionCuotaModeradora.AplicaTope = datos[11];
                 liquidaciones.Add(liquidacionCuotaModeradora);
             }
             fileStream.Close();

@@ -37,6 +37,9 @@ namespace IPSGUI
                 liquidacion.NumeroLiquidacion = TxtNumeroLiquidacion.Text;
                 liquidacion.FechaLiquidacion = DtpFechaLiquidacion.Value.Date;
                 liquidacion.Identificacion = TxtIdentificacion.Text;
+                liquidacion.PrimerNombre = TxtPrimerNombre.Text.Trim();
+                liquidacion.PrimerApellido = TxtPrimerApellido.Text.Trim();
+
                 liquidacion.TipoAfiliacion = CmbTipoAfiliacion.Text;
                 liquidacion.SalarioDevengado = double.Parse(TxtSalarioDevengado.Text);
                 liquidacion.ValorServicioHospitalizacion = double.Parse(TxtValorHospitalizacion.Text);
@@ -48,6 +51,8 @@ namespace IPSGUI
                 liquidacion.NumeroLiquidacion = TxtNumeroLiquidacion.Text;
                 liquidacion.FechaLiquidacion = DtpFechaLiquidacion.Value.Date;
                 liquidacion.Identificacion = TxtIdentificacion.Text;
+                liquidacion.PrimerNombre = TxtPrimerNombre.Text.Trim();
+                liquidacion.PrimerApellido = TxtPrimerApellido.Text.Trim();
                 liquidacion.TipoAfiliacion = CmbTipoAfiliacion.Text;
                 liquidacion.SalarioDevengado = double.Parse(TxtSalarioDevengado.Text);
                 liquidacion.ValorServicioHospitalizacion = double.Parse(TxtValorHospitalizacion.Text);
@@ -92,6 +97,8 @@ namespace IPSGUI
                     TxtSalarioDevengado.Text = liquidacion.SalarioDevengado.ToString();
                     TxtValorHospitalizacion.Text = liquidacion.ValorServicioHospitalizacion.ToString();
                     CmbTipoAfiliacion.Text = liquidacion.TipoAfiliacion;
+                    TxtPrimerNombre.Text = liquidacion.PrimerNombre;
+                    TxtPrimerApellido.Text = liquidacion.PrimerApellido;
                     DtpFechaLiquidacion.Value = liquidacion.FechaLiquidacion;
                 }
                 else
@@ -105,38 +112,6 @@ namespace IPSGUI
             }
         }
 
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            LiquidacionCuotaModeradoraService service = new LiquidacionCuotaModeradoraService();
-            if (CmbTipoAfiliacion.Text.Equals("Contributivo"))
-            {
-                
-                LiquidacionCuotaModeradora moderadora = new Contributivo();
-                moderadora.NumeroLiquidacion = TxtNumeroLiquidacion.Text.Trim();
-                moderadora.Identificacion = TxtIdentificacion.Text.Trim();
-                moderadora.FechaLiquidacion = DtpFechaLiquidacion.Value;
-                moderadora.SalarioDevengado = double.Parse(TxtSalarioDevengado.Text.Trim());
-                moderadora.TipoAfiliacion = CmbTipoAfiliacion.Text.Trim();
-                moderadora.ValorServicioHospitalizacion = double.Parse(TxtValorHospitalizacion.Text.Trim());
-                moderadora.CalcularTarifa();
-                service.Modificar(moderadora);
-                MessageBox.Show("SE MODIFICO CORRECTAMENTE EL REGISTRO");
-
-            }
-            else if (CmbTipoAfiliacion.Text.Equals("Subsidiado"))
-            {
-
-                LiquidacionCuotaModeradora Subsidiado = new Subsidiado();
-                Subsidiado.NumeroLiquidacion = TxtNumeroLiquidacion.Text.Trim();
-                Subsidiado.Identificacion = TxtIdentificacion.Text.Trim();
-                Subsidiado.FechaLiquidacion = DtpFechaLiquidacion.Value;
-                Subsidiado.SalarioDevengado = double.Parse(TxtSalarioDevengado.Text.Trim());
-                Subsidiado.TipoAfiliacion = CmbTipoAfiliacion.Text.Trim();
-                Subsidiado.ValorServicioHospitalizacion = double.Parse(TxtValorHospitalizacion.Text.Trim());
-                Subsidiado.CalcularTarifa();
-                service.Modificar(Subsidiado);
-                MessageBox.Show("SE MODIFICO CORRECTAMENTE EL REGISTRO");
-            }
-        }
+        
     }
 }

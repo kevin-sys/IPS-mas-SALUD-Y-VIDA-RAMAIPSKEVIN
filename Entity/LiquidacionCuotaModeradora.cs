@@ -11,6 +11,8 @@ namespace Entity
         public string NumeroLiquidacion { get; set; }
         public DateTime FechaLiquidacion { get; set; }
         public string Identificacion { get; set; }
+        public string PrimerNombre { get; set; }
+        public string PrimerApellido { get; set; }
         public string TipoAfiliacion { get; set; }
         public double SalarioDevengado { get; set; }
         public double ValorServicioHospitalizacion { get; set; }
@@ -22,7 +24,7 @@ namespace Entity
         public abstract void CalcularTarifa();
         public override string ToString()
         {
-            return $"{NumeroLiquidacion};{FechaLiquidacion};{Identificacion};{TipoAfiliacion};{SalarioDevengado};{ValorServicioHospitalizacion};{CuotaModeradoraFinal};{CuotaModeradoraReal};{Tarifa};{AplicaTope}";
+            return $"{NumeroLiquidacion};{FechaLiquidacion};{Identificacion};{PrimerNombre};{PrimerApellido};{TipoAfiliacion};{SalarioDevengado};{ValorServicioHospitalizacion};{CuotaModeradoraFinal};{CuotaModeradoraReal};{Tarifa};{AplicaTope}";
         }
     }
 }
